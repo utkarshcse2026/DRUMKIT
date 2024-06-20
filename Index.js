@@ -11,3 +11,8 @@ function playSound(sound) {
   const audio = new Audio(`sounds/${sound}.mp3`);
   audio.play();
 }
+function playSound(soundFile) {
+  console.log(`Playing sound from: ${soundFile}.mp3`);
+  const audio = new Audio(`${soundFile}.mp3`);
+  audio.play();
+}
