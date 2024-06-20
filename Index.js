@@ -1,18 +1,26 @@
-const drums = document.querySelectorAll('.drum');
+// index.js
 
-drums.forEach((drum) => {
-  drum.addEventListener('click', (e) => {
-    const sound = drum.getAttribute('data-sound');
-    playSound(sound);
-  });
-});
-
-function playSound(sound) {
-  const audio = new Audio(`sounds/${sound}.mp3`);
-  audio.play();
-}
+// Function to play sound
 function playSound(soundFile) {
-  console.log(`Playing sound from: ${soundFile}.mp3`);
   const audio = new Audio(`${soundFile}.mp3`);
   audio.play();
 }
+
+// Detecting button press
+const drumButtons = document.querySelectorAll('.drum');
+drumButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    const soundFile = this.getAttribute('data-sound');
+    playSound(soundFile);
+  });
+});
+
+// Detecting keyboard press
+document.addEventListener('keydown', function(event) {
+  const key = event.key;
+  const button = document.querySelector(`.${key}`);
+  if (button) {
+    const soundFile = button.getAttribute('data-sound');
+    playSound(soundFile);
+  }
+});
