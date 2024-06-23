@@ -1,1 +1,1 @@
-# Drum-Kit
+"Unleash your inner drummer! 🥁 I'm your go-to drumkit app, featuring professional sounds, customizable kits, and a user-friendly interface. Practice, perform, and rock out with me - anywhere, anytime!"
